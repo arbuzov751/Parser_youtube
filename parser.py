@@ -9,8 +9,8 @@ def csv_dict_reader(file_obj):
     reader = csv.DictReader(file_obj, delimiter=';')
     for line in reader:
         print(line["url"])
-        print(line["file_name"])
-        YouTube(line["url"]).streams.first().download(f'download_videos/{line["file_name"]}')
+        print(line["directory_name"])
+        YouTube(line["url"]).streams.first().download(f'{line["directory_name"]}')
 
 
 if __name__ == "__main__":
